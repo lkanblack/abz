@@ -1,0 +1,22 @@
+@import "../../styles/style.scss";
+.people {
+    color: $black;
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        margin-bottom: 50px;
+    }
+    &-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: repeat( auto-fill, minmax(calc(min(370px, 100%)), 1fr));
+        grid-gap: 29px;
+    }
+    button {
+        margin-top: 50px;
+        width: 120px;
+    }
+}
