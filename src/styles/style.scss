@@ -1,0 +1,32 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+// colors
+$primary: #f4e041;
+$secondary: #00bdd3;
+$bg-color: #f8f8f8;
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+// container
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 21px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+}

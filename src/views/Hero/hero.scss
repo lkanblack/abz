@@ -1,0 +1,19 @@
+.hero {
+    height: calc(100vh - 60px);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0 0 0 / 60%), rgba(0 0 0 / 60%)), url("../../assets/hero-bg.png");
+    background-size: cover;
+    &-wrap {
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        button {
+            margin-top: 32px;
+        }
+    }
+}
