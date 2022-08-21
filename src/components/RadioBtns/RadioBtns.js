@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FormControl, FormLabel, RadioGroup } from "@mui/material";
 import RadioBtn from "./RadioBtn";
 
 import "./radioBtns.scss";
 
 function RadioBtns() {
+  const [positions, setPositions] = useState([]);
+
+  const fetchData = () => {
+    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/positions")
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((data) => {
+        setPositions(data.positions);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <FormControl className="radio-btns">
       <FormLabel>Select your position</FormLabel>
-      <RadioGroup defaultValue="Frontend developer" name="radio-buttons-group">
-        <RadioBtn value="Frontend developer" label="Frontend developer" />
-        <RadioBtn value="Backend developer" label="Backend developer" />
-        <RadioBtn value="Designer" label="Designer" />
-        <RadioBtn value="QA" label="QA" />
-      </RadioGroup>
+
+      {positions.length > 0 && (
+        <RadioGroup name="radio-buttons-group">
+          {positions.map((pos) => (
+            <RadioBtn key={pos.id} value={pos.name} label={pos.name} />
+          ))}
+        </RadioGroup>
+      )}
     </FormControl>
   );
 }
