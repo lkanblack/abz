@@ -12,8 +12,7 @@
     &-wrap {
         display: flex;
         flex-wrap: wrap;
-        grid-template-columns: repeat( auto-fill, minmax(calc(min(370px, 100%)), 1fr));
-        grid-gap: 29px;
+        gap: 29px;
     }
     button {
         margin-top: 50px;
