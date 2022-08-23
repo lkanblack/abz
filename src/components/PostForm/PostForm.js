@@ -61,7 +61,6 @@ function PostForm() {
         fullWidth
       />
       <TextField
-        style={{ borderColor: "red" }}
         onChange={(e) => handler(e)}
         value={data.email}
         id="email"
