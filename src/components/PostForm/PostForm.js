@@ -9,7 +9,6 @@ import "./postform.scss";
 
 function PostForm() {
   const [token, setToken] = useState("");
-
   useEffect(() => {
     axios
       .get("https://frontend-test-assignment-api.abz.agency/api/v1/token")
@@ -62,6 +61,7 @@ function PostForm() {
         fullWidth
       />
       <TextField
+        style={{ borderColor: "red" }}
         onChange={(e) => handler(e)}
         value={data.email}
         id="email"
@@ -79,7 +79,7 @@ function PostForm() {
       />
       <RadioBtns />
       <UploadBtn />
-      <Button text={"Sign Up"} />
+      <Button disabled={true} text={"Sign Up"} />
     </form>
   );
 }
